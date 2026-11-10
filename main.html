@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080900">
+<meta name="description" content="John Andrew — short-form video editing, long-form video editing, and content management.">
+<title>John Andrew | Video Editor & Content Partner</title>
+<style>
+:root{--gold:#ffc700;--gold2:#d9b400;--ink:#050604;--muted:#b8b7a9;--line:rgba(255,255,255,.28);--panel:rgba(255,255,255,.045)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:#f8f8f2;background:radial-gradient(ellipse at 3% 2%,rgba(138,129,15,.9) 0,rgba(75,70,3,.52) 23%,transparent 48%),radial-gradient(ellipse at 100% 88%,rgba(130,119,0,.78) 0,rgba(64,59,0,.4) 27%,transparent 54%),#050604;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:300;min-height:100vh}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.wrap{width:min(100% - 40px,820px);margin:auto}
+.hero{text-align:center;padding:70px 0 72px}
+.avatar{width:154px;height:154px;border:2px solid var(--gold);border-radius:50%;object-fit:cover;display:block;margin:0 auto 18px;box-shadow:0 10px 40px #0008}
+h1{font-size:clamp(2.25rem,6vw,3.1rem);line-height:1.05;letter-spacing:-.055em;margin:0 0 24px;font-weight:850}
+.gold{color:var(--gold)}
+.services{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.pill{border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:8px 23px;color:#d3d0c4;font-size:14px;line-height:1.1}
+.status{display:inline-flex;align-items:center;gap:8px;border:1px solid #9b8100;background:rgba(160,132,0,.34);border-radius:999px;padding:6px 13px;color:#ffdc00;font-size:13px;font-weight:650}
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #9b8100;
+  background: rgba(160,132,0,.34);
+  border-radius: 999px;
+  padding: 6px 13px;
+  color: #ffdc00;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.status:before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 8px var(--gold);
+  }
+  50% {
+    opacity: 0.15;
+    box-shadow: 0 0 0 transparent;
+  }
+}
+.cta{display:flex;align-items:center;justify-content:center;gap:10px;width:max-content;margin:25px auto 0;padding:16px 30px;border-radius:999px;background:#fff;color:#080808;font-weight:700;font-size:14px;transition:.2s}
+.cta:hover{transform:translateY(-2px);box-shadow:0 8px 30px #0007}
+section{margin:0 auto 34px}
+.section-title{font-size:16px;color:#deddd4;margin:0 0 15px;font-weight:350}
+.brands{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:20px 18px;max-width:600px}
+.brand{display:flex;flex-direction:column;align-items:center;gap:6px;min-width:0}
+.brand img{width:72px;height:72px;object-fit:cover;border-radius:50%;border:1.5px solid var(--gold);background:#161616}
+.brand:nth-child(2n) img{border-color:#fff}
+.brand small{font-size:8px;color:#b7b3a0;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.video-frame{position:relative;overflow:hidden;border-radius:5px;background:#111;aspect-ratio:16/9}
+.video-frame iframe{width:100%;height:100%;border:0;position:absolute;inset:0}
+.featured{width:100%}
+.description{font-size:12px;line-height:1.55;color:#c8c5b5;margin:12px 0 0}
+.testimonial-image{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;border-radius:8px}
+.credit{font-size:11px;color:#c4c1b1;margin-top:10px}
+.yt-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.yt-card{position:relative;aspect-ratio:16/9;border:0;padding:0;background:#111;overflow:hidden;cursor:pointer;border-radius:2px}
+.yt-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.yt-card:hover img{transform:scale(1.04)}
+.play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:#ff0033;color:#fff;border-radius:8px;padding:5px 11px;font-size:13px;box-shadow:0 2px 12px #0006}
+.reel-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.reel-card{border:0;padding:0;background:#111;position:relative;aspect-ratio:9/16;overflow:hidden;cursor:pointer;border-radius:2px}
+.reel-card img{width:100%;height:100%;object-fit:cover;display:block}
+.reel-card.placeholder{background:#fff;color:#222;display:grid;place-items:center}
+.reel-card.placeholder span{font-size:22px}
+.reel-card.placeholder small{display:block;color:#1686e8;font-size:8px;margin-top:8px}
+.reel-card:hover{outline:1px solid var(--gold)}
+.more{font-size:10px;color:#d4d0bd;display:inline-block;margin-top:20px}
+.more:hover{color:var(--gold)}
+.work-box{border:1px solid #a88700;border-radius:9px;background:rgba(45,42,10,.68);padding:28px 22px 24px;text-align:center;margin:36px 0 45px}
+.work-box h2{font-size:clamp(1.5rem,4vw,2rem);margin:0 0 22px;font-weight:850;letter-spacing:-.035em}
+.work-box p{font-size:11px;color:#d2cebb;margin:0 auto;max-width:480px;line-height:1.6}
+.work-box .cta{margin-top:22px}
+footer{text-align:center;color:#aaa68f;font-size:10px;padding:0 0 28px}
+.modal{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;padding:22px}
+.modal.open{display:flex}
+.modal-inner{width:min(100%,900px);position:relative}
+.modal-close{position:absolute;right:0;top:-46px;border:1px solid #777;background:#171717;color:#fff;border-radius:50%;width:38px;height:38px;font-size:24px;cursor:pointer;z-index:2}
+.modal-content{background:#080808;border-radius:8px;overflow:hidden;aspect-ratio:16/9}
+.modal-content.vertical{width:min(420px,100%);aspect-ratio:9/16;margin:auto}
+.modal-content iframe{width:100%;height:100%;border:0;display:block}
+@media(max-width:620px){.wrap{width:min(100% - 32px,820px)}.hero{padding:44px 0 55px}.avatar{width:130px;height:130px}.brands{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px 12px;max-width:400px}.brand img{width:66px;height:66px}.reel-grid{gap:8px}.section-title{font-size:15px}.description{font-size:11px}.work-box{padding:25px 16px}.pill{padding:8px 16px;font-size:12px}}
+@media(max-width:390px){.reel-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.brands{grid-template-columns:repeat(4,minmax(0,1fr))}.services{gap:7px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header class="hero">
+    <img class="avatar" src="https://johnandrewedits.com/_assets/media/018215f232852d0ecdc9933d5662e9be.png" alt="John Andrew">
+    <h1>John <span class="gold">Andrew</span></h1>
+    <div class="services"><span class="pill">Short-Form</span><span class="pill">Long-Form</span><span class="pill">Content Management</span></div>
+    <div class="status">Taking on more clients</div>
+    <a class="cta" href="https://www.instagram.com/direct/t/17850371684613496/" target="_blank" rel="noopener">Partner with me <span aria-hidden="true">⟶</span></a>
+  </header>
+
+  <section>
+  <h2 class="section-title">Brands that I’ve worked with</h2>
+
+  <div class="brands">
+
+    <a class="brand" href="https://www.instagram.com/clickfunnels/" target="_blank" rel="noopener">
+      <img src="assets/CLICKFUNNEL DP.jpg" alt="ClickFunnels">
+      <small>ClickFunnels</small>
+    </a>
+
+    <a class="brand" href="https://www.instagram.com/magneticmarketingofficial/" target="_blank" rel="noopener">
+      <img src="assets/MAGNETICMARKETING DP.jpg" alt="Magnetic Marketing">
+      <small>Magnetic Marketing</small>
+    </a>
+
+    <a class="brand" href="https://www.instagram.com/aditya1uthra/" target="_blank" rel="noopener">
+      <img src="assets/ADITYA DP.jpg" alt="Aditya Luthra">
+      <small>Aditya Luthra</small>
+    </a>
+
+    <a class="brand" href="https://www.instagram.com/draxsocial/" target="_blank" rel="noopener">
+      <img src="assets/DRAX DP.jpg" alt="Drax Social">
+      <small>Drax Social</small>
+    </a>
+
+    <a class="brand" href="https://www.youtube.com/@EliteAttraction" target="_blank" rel="noopener">
+      <img src="assets/ELITE ATTRACTION DP.jpg" alt="Elite Attraction">
+      <small>Elite Attraction</small>
+    </a>
+
+    <a class="brand" href="https://www.instagram.com/drachnik/" target="_blank" rel="noopener">
+      <img src="assets/DRACHNICK DP.jpg" alt="Drachnik">
+      <small>Drachnik</small>
+    </a>
+
+    <a class="brand" href="https://www.instagram.com/qwerty__digital/" target="_blank" rel="noopener">
+      <img src="assets/SAM DRAKE DP.jpg" alt="Qwerty Digital">
+      <small>Qwerty Digital</small>
+    </a>
+
+    <a class="brand" href="https://www.instagram.com/kilianfaeustle/" target="_blank" rel="noopener">
+      <img src="assets/KILIAN DP.jpg" alt="Kilian Fäustle">
+      <small>Kilian Fäustle</small>
+    </a>
+
+    <a class="brand" href="https://www.instagram.com/pharrellstory/" target="_blank" rel="noopener">
+      <img src="assets/PHARELL DP.jpg" alt="Pharrellstory">
+      <small>Pharrellstory</small>
+    </a>
+
+    <a class="brand" href="https://www.instagram.com/fitocanin/" target="_blank" rel="noopener">
+      <img src="assets/FITOCANIN DP.jpg" alt="Fitocanin">
+      <small>Fitocanin</small>
+    </a>
+
+  </div>
+</section>
+
+  <section>
+    <h2 class="section-title">Featured client</h2>
+    <div class="video-frame featured"><iframe src="https://www.youtube-nocookie.com/embed/A2QbJ3ZZt-M?rel=0" title="Featured client video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+    <p class="description">Kilian - A fitness and nutrition coach specializing in sustainable fat loss, muscle development, and behavioral psychology, with a track record of helping over 500 women transform their bodies and mindset.</p>
+  </section>
+
+  <section>
+  <h2 class="section-title">Testimonial</h2>
+
+  <div class="video-frame testimonial-video">
+    <iframe
+      src="https://drive.google.com/file/d/1C0SxyyQsjnRhG5ef3QS-qFrgzmBVyMfJ/preview"
+      title="Sam Drake Client Testimonial"
+      allow="autoplay"
+      loading="lazy">
+    </iframe>
+  </div>
+
+  <p class="credit">Sam Drake - Owner of @Qwerty_Digital</p>
+</section>
+
+  <section>
+    <h2 class="section-title">YOUTUBE</h2>
+    <div class="yt-grid">
+      <button class="yt-card" data-youtube="Akss4g63vg0" aria-label="Play YouTube portfolio video"><img src="https://img.youtube.com/vi/Akss4g63vg0/hqdefault.jpg" alt="YouTube portfolio video"><span class="play">▶</span></button>
+      <button class="yt-card" data-youtube="KWFGKj36UfM" aria-label="Play YouTube portfolio video"><img src="https://img.youtube.com/vi/KWFGKj36UfM/hqdefault.jpg" alt="YouTube portfolio video"><span class="play">▶</span></button>
+      <button class="yt-card" data-youtube="CESeB5Cirf8" aria-label="Play YouTube portfolio video"><img src="https://img.youtube.com/vi/CESeB5Cirf8/hqdefault.jpg" alt="YouTube portfolio video"><span class="play">▶</span></button>
+      <button class="yt-card" data-youtube="8mtmu06Rnnk" aria-label="Play YouTube portfolio video"><img src="https://img.youtube.com/vi/8mtmu06Rnnk/hqdefault.jpg" alt="YouTube portfolio video"><span class="play">▶</span></button>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Short-Forms</h2>
+    <div class="reel-grid" id="reels">
+      <button class="reel-card" data-instagram="DakA-2xo64U" aria-label="Open Instagram Reel"><img src="assets/shorts/pharell1.jpg" alt="Short-form video sample"></button>
+      <button class="reel-card" data-instagram="Daea3VQoesw" aria-label="Open Instagram Reel"><img src="assets/shorts/pharell2.jpg" alt="Short-form video sample"></button>
+      <button class="reel-card" data-instagram="DblbJB_iprV" aria-label="Open Instagram Reel"><img src="assets/shorts/kilian1.jpg" alt="Short-form video sample"></button>
+      <button class="reel-card" data-instagram="Db-n5aViJgk" aria-label="Open Instagram Reel"><img src="assets/shorts/kilian2.jpg" alt="Short-form video sample"></button>
+      <button class="reel-card" data-instagram="DZsHvDkuoV8" aria-label="Open Instagram Reel"><img src="assets/shorts/qwerty1.jpg" alt="Short-form video sample"></button>
+      <button class="reel-card" data-instagram="DZcXIWNJEZ9" aria-label="Open Instagram Reel"><img src="assets/shorts/qwerty2.jpg" alt="Short-form video sample"></button>
+      <button class="reel-card" data-instagram="DRxVrNdkqKq" aria-label="Open Instagram Reel"><img src="assets/shorts/drax1.jpg" alt="Short-form video sample"></button>
+      <button class="reel-card" data-instagram="DS5S3yWjzKu" aria-label="Open Instagram Reel"><img src="assets/shorts/drax2.jpg" alt="Short-form video sample"></button>
+    </div>
+    <a class="more" href="https://johnandrewedits.com/moresampleworks" target="_blank" rel="noopener">View more sample edits ↗</a>
+  </section>
+
+  <section class="work-box">
+    <h2>Let’s Work <span class="gold">together</span></h2>
+    <p>We can hop on a quick call, put together a clear plan, and then I can get straight to work.</p>
+    <a class="cta" href="https://www.instagram.com/direct/t/17850371684613496/" target="_blank" rel="noopener">Partner with me <span aria-hidden="true">⟶</span></a>
+  </section>
+  <footer>© <span id="year"></span> John Andrew. All rights reserved.</footer>
+</main>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Video player">
+  <div class="modal-inner">
+    <button class="modal-close" id="closeModal" aria-label="Close video">×</button>
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+</div>
+<script>
+const modal=document.getElementById('modal');
+const modalContent=document.getElementById('modalContent');
+function openVideo(url,vertical=false){
+  modalContent.className='modal-content'+(vertical?' vertical':'');
+  modalContent.innerHTML=`<iframe src="${url}" title="Portfolio video" allow="autoplay; encrypted-media; picture-in-picture; clipboard-write" allowfullscreen loading="eager"></iframe>`;
+  modal.classList.add('open');document.body.style.overflow='hidden';
+}
+function closeVideo(){modal.classList.remove('open');modalContent.innerHTML='';document.body.style.overflow='';}
+document.querySelectorAll('[data-youtube]').forEach(el=>el.addEventListener('click',()=>openVideo(`https://www.youtube-nocookie.com/embed/${el.dataset.youtube}?autoplay=1&rel=0`)));
+document.querySelectorAll('[data-instagram]').forEach(el=>el.addEventListener('click',()=>openVideo(`https://www.instagram.com/reel/${el.dataset.instagram}/embed/`,true)));
+document.getElementById('closeModal').addEventListener('click',closeVideo);
+modal.addEventListener('click',e=>{if(e.target===modal)closeVideo()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeVideo()});
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
