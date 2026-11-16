@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080900">
+  <meta name="description" content="Your discovery call preparation page. Get ready for your conversation with John Andrew.">
+  <title>You're All Set | John Andrew</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+  <style>
+    :root{color-scheme:dark;--gold:#ffc700;--ink:#070805;--muted:#c4c1b2;--line:rgba(255,255,255,.13);--panel:rgba(255,255,255,.045);--max:1040px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;color:#f8f8f2;background:radial-gradient(ellipse at 5% 0%,rgba(123,111,0,.48),transparent 42%),radial-gradient(ellipse at 100% 85%,rgba(105,98,0,.34),transparent 45%),var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}.wrap{width:min(100% - 44px,var(--max));margin-inline:auto}.topbar{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px;border-bottom:1px solid var(--line)}.brand{font-size:14px;font-weight:850;letter-spacing:-.035em;white-space:nowrap}.brand span{color:var(--gold)}.nav-link{color:#d0cdbd;font-size:12px;transition:color .2s}.nav-link:hover{color:var(--gold)}
+    .hero{text-align:center;padding:clamp(54px,8vw,88px) 0 44px}.success-mark{width:58px;height:58px;display:grid;place-items:center;margin:0 auto 22px;border:1px solid rgba(255,199,0,.58);border-radius:50%;background:rgba(255,199,0,.09);color:var(--gold);font-size:27px;box-shadow:0 0 35px rgba(255,199,0,.10)}.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 13px;border:1px solid rgba(255,199,0,.4);border-radius:999px;color:#ffdc38;background:rgba(160,132,0,.11);font-size:10px;font-weight:750;letter-spacing:.12em;text-transform:uppercase}h1{max-width:850px;margin:20px auto 15px;font-size:clamp(2.5rem,7vw,5rem);line-height:.99;letter-spacing:-.07em;font-weight:850}.gold{color:var(--gold)}.hero-copy{max-width:650px;margin:0 auto;color:#d0cebf;font-size:clamp(14px,1.8vw,16px);line-height:1.8}
+    .layout{display:grid;grid-template-columns:minmax(0,760px);justify-content:center;gap:20px;align-items:start;padding-bottom:60px}.panel{min-width:0;padding:clamp(20px,3vw,30px);border:1px solid var(--line);border-radius:16px;background:var(--panel);box-shadow:0 18px 55px rgba(0,0,0,.18)}.panel h2{margin:0 0 9px;font-size:clamp(19px,2.3vw,23px);letter-spacing:-.04em}.subcopy{margin:0 0 22px;color:var(--muted);font-size:13px;line-height:1.7}
+    .video-placeholder{position:relative;display:grid;place-items:center;width:100%;max-width:100%;margin-inline:auto;aspect-ratio:16/9;overflow:hidden;border:1px solid rgba(255,199,0,.24);border-radius:11px;background:radial-gradient(ellipse at center,rgba(255,199,0,.12),transparent 58%),linear-gradient(135deg,#1d1e16,#10110d 65%,#1a1a12);text-align:center;padding:20px}.video-placeholder iframe{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:10px}
+    .play-icon{width:54px;height:54px;display:grid;place-items:center;margin:0 auto 13px;padding-left:3px;border-radius:50%;background:var(--gold);color:#111;font-size:19px;box-shadow:0 6px 25px rgba(255,199,0,.18)}.video-placeholder strong{display:block;font-size:13px}.video-placeholder small{display:block;margin-top:6px;color:#bdb9a8;font-size:11px;line-height:1.5}.video-caption{margin:12px 0 0;color:#a9a694;font-size:11px;line-height:1.6}
+    .checklist{display:grid;gap:17px;margin:22px 0 0;padding:0;list-style:none}.checklist li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;align-items:start}.step{width:27px;height:27px;display:grid;place-items:center;border:1px solid rgba(255,199,0,.45);border-radius:8px;color:var(--gold);font-size:11px;font-weight:800}.checklist strong{display:block;margin:1px 0 4px;font-size:13px}.checklist p{margin:0;color:var(--muted);font-size:12px;line-height:1.65}.callout{margin-top:22px;padding:16px 17px;border-left:2px solid var(--gold);border-radius:0 9px 9px 0;background:rgba(255,199,0,.07);color:#d8d4c3;font-size:12px;line-height:1.7}.callout strong{color:#fff2bd}.details{display:grid;gap:13px;margin-top:22px}.detail{display:flex;gap:12px;align-items:flex-start;padding:13px 14px;border:1px solid var(--line);border-radius:10px;background:rgba(0,0,0,.12)}.detail-icon{flex:0 0 20px;color:var(--gold);font-size:15px;text-align:center}.detail strong{display:block;margin-bottom:3px;font-size:12px}.detail span{display:block;color:var(--muted);font-size:11px;line-height:1.55;overflow-wrap:anywhere}.footer{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0 30px;border-top:1px solid var(--line);color:#aaa68f;font-size:10px}.footer a:hover{color:var(--gold)}
+    @media(max-width:760px){.layout{grid-template-columns:minmax(0,1fr);gap:16px}.hero{padding-bottom:30px}.panel{padding:22px}}@media(max-width:480px){.wrap{width:min(100% - 30px,var(--max))}.topbar{min-height:65px}.brand{font-size:12px}.nav-link{font-size:11px}.success-mark{width:50px;height:50px;font-size:23px}.hero{padding-top:46px}.hero-copy{font-size:13px}.panel{padding:18px;border-radius:13px}.footer{flex-direction:column;align-items:flex-start}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <nav class="topbar" aria-label="Main navigation"><a class="brand" href="index.html">JOHN <span>ANDREW</span></a><a class="nav-link" href="index.html">← Back to portfolio</a></nav>
+    <header class="hero">
+      <div class="success-mark" aria-hidden="true">✓</div>
+      <div class="eyebrow">Discovery call preparation</div>
+      <h1>You're one step closer to a <span class="gold">stronger content system.</span></h1>
+      <p class="hero-copy">Thanks for booking a discovery call. Before we meet, take a few minutes to watch the short preparation video and review what we'll cover. It will help us make the most of our conversation.</p>
+    </header>
+    <div class="layout">
+      <section class="panel" aria-labelledby="video-title">
+        <h2 id="video-title">A quick message before we meet</h2>
+        <p class="subcopy">Watch this short video so you know what to expect from our conversation and how to prepare.</p>
+        <div class="video-placeholder">
+          <iframe
+            src="https://www.youtube.com/embed/zBNcOgVv5xk?si=oCxCAaq-m9dU4A5i"
+            title="Discovery Call Preparation - John Andrew"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p class="video-caption">The video will explain how the call works, what we'll discuss, and what information will be useful to have ready.</p>
+        <div class="callout"><strong>Already booked?</strong> Your meeting is managed through Calendly. Check your inbox for the calendar invitation and meeting details. If you don't see it, check your spam or promotions folder.</div>
+      </section>
+      <aside class="panel" aria-labelledby="prepare-title">
+        <h2 id="prepare-title">How to prepare</h2>
+        <p class="subcopy">You don't need a polished presentation. Just come ready to talk openly about your business.</p>
+        <ol class="checklist">
+          <li><span class="step">01</span><div><strong>Know your current priorities</strong><p>Think about what you're trying to grow and the role content needs to play in that growth.</p></div></li>
+          <li><span class="step">02</span><div><strong>Bring your current content examples</strong><p>Have your website and social media profiles ready so we can look at your current online presence.</p></div></li>
+          <li><span class="step">03</span><div><strong>Identify your biggest bottleneck</strong><p>Consider what's holding you back—strategy, planning, filming, editing, publishing, or consistency.</p></div></li>
+          <li><span class="step">04</span><div><strong>Be clear about your goals</strong><p>Think about what a successful content partnership would help you achieve over the next 3–6 months.</p></div></li>
+        </ol>
+        <div class="details">
+          <div class="detail"><span class="detail-icon" aria-hidden="true">◷</span><div><strong>Set aside 30 minutes</strong><span>Join from somewhere quiet where you can focus on the conversation.</span></div></div>
+          <div class="detail"><span class="detail-icon" aria-hidden="true">✉</span><div><strong>Check your confirmation email</strong><span>Use the Calendly invitation for the exact date, time, and meeting link.</span></div></div>
+        </div>
+      </aside>
+    </div>
+    <footer class="footer"><span>© <span id="year"></span> John Andrew. All rights reserved.</span><a href="index.html">Return to homepage ↑</a></footer>
+  </main>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
